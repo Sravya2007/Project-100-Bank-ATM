@@ -1,4 +1,5 @@
 class atm(object):
+    #Intitializing class
     def __init__(self, atmCardNumber, pinNumber, name, currency, money_in_bank):
         self.atmCardNumber = atmCardNumber
         self.pinNumber = pinNumber
@@ -6,14 +7,17 @@ class atm(object):
         self.currency = currency
         self.money_in_bank = money_in_bank
 
+    #Withdrawing cash from the ATM
     def cashWithdrawal(self):
         cash = int(input("Enter the amount that you want to withdraw (in " + self.currency + "): "))
         print("Dear " + self.name + ", " + self.currency, cash, " withdrawn!")
         self.money_in_bank = self.money_in_bank - cash
     
+    #Money left after deducting cash
     def balanceEnquiry(self):
         print("You have " + self.currency, self.money_in_bank, "in the bank.")
 
+    #Getting user info
     def getInfo(self):
         print("Name: " + self.name)
         print("ATM Card Number:", self.atmCardNumber)
